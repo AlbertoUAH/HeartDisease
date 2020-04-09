@@ -9,7 +9,7 @@ api = Api(app)
 
 class Hello(Resource):
     def get(self):
-        df = pd.read_csv("data.csv", sep = ";")
+        """df = pd.read_csv("data.csv", sep = ";")
         df = df.dropna()
 
         X = df.drop('diagnosis', axis=1)
@@ -26,10 +26,11 @@ class Hello(Resource):
 
         for index, row in df.iterrows():
             if row['id'] in id_list:
-                diagnosis_list.append(row['diagnosis'])
-        return diagnosis_list
+                diagnosis_list.append(row['diagnosis'])"""
+        return "hello"
 
 api.add_resource(Hello, '/hello')
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", debug=True)
+	print("Running!!!!!")
