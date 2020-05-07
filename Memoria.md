@@ -5,7 +5,7 @@
 
 **Ejercicio 1**
 ---------------
-
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 En primer lugar, vamos a familiarizarnos con el simulador R2P2. Para ello,
 ejecutamos el comando python r2p2.py. El resultado de ejecución es un escenario
 de un robot que podemos controlar con las flechas del teclado:
