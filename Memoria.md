@@ -5,12 +5,12 @@
 
 **Ejercicio 1**
 ---------------
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 En primer lugar, vamos a familiarizarnos con el simulador R2P2. Para ello,
 ejecutamos el comando python r2p2.py. El resultado de ejecución es un escenario
 de un robot que podemos controlar con las flechas del teclado:
 
-![](media/af05706d7c6e96c75e261e7ac3513728.png)
+<img src="media/af05706d7c6e96c75e261e7ac3513728.png" width="400" height="300" />
 
 Ilustración . r2p2.py
 
@@ -19,9 +19,9 @@ Ilustración . r2p2.py
 
 No obstante, *r2p2* permite obtener también una ruta entre dos puntos dado un
 mapa. Para ello debemos ejecutar el siguiente comando:
-
+```
 python r2p2.py --scenario ../conf/scenario-pathplanning.json
-
+```
 El fichero *scenario-pathplanning.json* contiene varios parámetros para el
 cálculo de la ruta, tal y como se muestra a continuación:
 
@@ -262,6 +262,7 @@ Ilustración 5. Theta\* (I)
 
 ![Imagen que contiene edificio, jaula, negro, con baldosas Descripción generada automáticamente](media/b932b5637d7b5c64901a36239a72e452.png)
 
+
 Ilustración 6. Theta\* (II)
 
 **Ejercicio 6. ¿Qué heurística se usa por defecto?**
@@ -280,7 +281,8 @@ def naive(point, point2):
 
 **Distancia euclídea**
 
-$$ \mathbf{d}\left( \mathbf{P}_{\mathbf{1}}\mathbf{,}\mathbf{P}_{\mathbf{2}} \right)\mathbf{= \sqrt{\left( \mathbf{x}_{\mathbf{2}}\mathbf{-}\mathbf{x}_{\mathbf{1}} \right)^{\mathbf{2}}\mathb {+}\left( \mathbf{y}_{\mathbf{2}}\mathbf{-}\mathbf{y}_{\mathbf{1}} \right)^{\mathbf{2}}} $$
+
+![Imagen que contiene edificio, jaula, negro, con baldosas Descripción generada automáticamente](media/euclidea.JPG)
 
 ```
 def euclidean(point, point2):
@@ -296,9 +298,7 @@ def euclidean(point, point2):
 ```
 **Distancia Manhattan**
 
-$$
-\mathbf{d}\left( \mathbf{P}_{\mathbf{1}}\mathbf{,}\mathbf{P}_{\mathbf{2}} \right)\mathbf{=}\left| \mathbf{x}_{\mathbf{2}}\mathbf{-}\mathbf{x}_{\mathbf{1}} \right|\mathbf{+}\left| \mathbf{y}_{\mathbf{2}}\mathbf{-}\mathbf{y}_{\mathbf{1}} \right|
-$$
+![Imagen que contiene edificio, jaula, negro, con baldosas Descripción generada automáticamente](media/manhattan.JPG)
 
 ```
 def manhattan(point,point2):
@@ -313,17 +313,7 @@ def manhattan(point,point2):
 ```
 **Distancia octil**
 
-$$
-\mathbf{dx = \ }\left| \mathbf{x}_{\mathbf{2}}\mathbf{-}\mathbf{x}_{\mathbf{1}} \right|
-$$
-
-$$
-\mathbf{dy = \ }\left| \mathbf{y}_{\mathbf{2}}\mathbf{-}\mathbf{y}_{\mathbf{1}} \right|
-$$
-
-$$
-\mathbf{d}\left( \mathbf{P}_{\mathbf{1}}\mathbf{,}\mathbf{P}_{\mathbf{2}} \right)\mathbf{= \ }\left| \mathbf{dx - dy} \right|\mathbf{+ \ }\sqrt{\mathbf{2}}\mathbf{*min(dx,dy)}
-$$
+![Imagen que contiene edificio, jaula, negro, con baldosas Descripción generada automáticamente](media/octil.JPG)
 ```
 def octile(point, point2):
     """
@@ -489,15 +479,11 @@ más optima).
     Euclídea. Esto se debe a que la distancia octil es una variante de la
     distancia de Chebyshev:
 
-$$
-\max\left( \left| x_{1} - x_{2} \right|,\ \left| y_{1} - y_{2} \right| \right)
-$$
+![Imagen que contiene edificio, jaula, negro, con baldosas Descripción generada automáticamente](media/maximo.JPG)
 
 Mientras que la distancia de Manhattan es:
 
-$$
-\left| x_{1} - x_{2} \right| + \ \left| y_{1} - y_{2} \right|
-$$
+![Imagen que contiene edificio, jaula, negro, con baldosas Descripción generada automáticamente](media/absoluto.JPG)
 
 Como vemos, la diferencia reside en que la primera heurística es el máximo de la
 diferencia entre cada una de las coordenadas, mientras que la distancia de
