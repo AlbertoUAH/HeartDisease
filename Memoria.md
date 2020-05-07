@@ -10,10 +10,10 @@ En primer lugar, vamos a familiarizarnos con el simulador R2P2. Para ello,
 ejecutamos el comando python r2p2.py. El resultado de ejecución es un escenario
 de un robot que podemos controlar con las flechas del teclado:
 
-<img src="media/af05706d7c6e96c75e261e7ac3513728.png" width="400" height="300" />
+<div style="text-align:center"> <img src="media/af05706d7c6e96c75e261e7ac3513728.png" width="400" height="300" /> 
 
 Ilustración . r2p2.py
-
+</div>
 **Ejercicio 2**
 ---------------
 
